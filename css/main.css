@@ -238,9 +238,18 @@ svg {
 }
 .header {
   justify-content: space-between;
-  background-color: #445161;
+  background: rgba(68, 81, 97, 0.5) url(../img/logo.jpg);
+  background-size: cover;
+  background-blend-mode: color;
+}
+@media (min-width: 768px) {
+  .header {
+    background-color: #445161;
+    background-image: none;
+  }
 }
 .header__wrapper {
+  position: relative;
   padding: 25px 15px 15px;
 }
 @media (min-width: 768px) {
@@ -297,6 +306,7 @@ svg {
   margin-bottom: 10px;
 }
 .header__img-wrap {
+  display: none;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -304,7 +314,11 @@ svg {
 }
 @media (min-width: 768px) {
   .header__img-wrap {
+    display: block;
     width: 47%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 @media (min-width: 1170px) {
