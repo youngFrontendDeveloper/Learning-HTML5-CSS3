@@ -188,13 +188,128 @@ svg {
   height: 40px;
   z-index: 10;
 }
-.to-top:hover {
-  cursor: pointer;
-}
 .to-top__icon {
   width: 100%;
   height: 100%;
+  fill: rgba(255, 255, 255, 0.7);
 }
+.to-top__icon:hover {
+  cursor: pointer;
+  fill: #b4b4b4;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?54304424');
+  src: url('../fonts/fontello.eot?54304424#iefix') format('embedded-opentype'), url('../fonts/fontello.woff2?54304424') format('woff2'), url('../fonts/fontello.woff?54304424') format('woff'), url('../fonts/fontello.ttf?54304424') format('truetype'), url('../fonts/fontello.svg?54304424#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?54304424#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  /* speak: never; */
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-ok:before {
+  content: '\e800';
+}
+/* '' */
+.icon-plus:before {
+  content: '\e801';
+}
+/* '' */
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?38119283');
+  src: url('../font/fontello.eot?38119283#iefix') format('embedded-opentype'), url('../font/fontello.woff2?38119283') format('woff2'), url('../font/fontello.woff?38119283') format('woff'), url('../font/fontello.ttf?38119283') format('truetype'), url('../font/fontello.svg?38119283#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?38119283#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-twitter:before {
+  content: '\e800';
+}
+/* '' */
+.icon-facebook:before {
+  content: '\f09a';
+}
+/* '' */
+.icon-gplus:before {
+  content: '\f0d5';
+}
+/* '' */
+.icon-vkontakte:before {
+  content: '\f189';
+}
+/* '' */
 .container {
   width: 100%;
   max-width: 540px;
@@ -314,8 +429,10 @@ svg {
 .header__text-box {
   margin-left: 20px;
 }
-.header__text {
-  list-style-image: url(../img/icon-check.svg);
+.icon-ok {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 .header__text:not(:last-of-type) {
   margin-bottom: 10px;
@@ -769,8 +886,11 @@ svg {
   line-height: 24px;
   color: #445161;
   background-color: #ffffff;
-  border: none;
+  border: 4px solid transparent;
   border-radius: 5px;
+}
+.form__item:focus {
+  outline-color: transparent;
 }
 .form__message {
   height: 100px;
@@ -788,9 +908,8 @@ svg {
 .form__button {
   width: 143px;
   height: 43px;
-  padding: 0;
   font-weight: bold;
-  line-height: 43px;
+  line-height: 1;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.2s;
@@ -802,6 +921,21 @@ svg {
 }
 .form__button:hover {
   background-color: #b4b4b4;
+}
+.form__item:focus:invalid {
+  border-color: #f84a05;
+}
+.form_hint {
+  background: #d45252;
+  border-radius: 3px 3px 3px 3px;
+  color: white;
+  margin-left: 8px;
+  padding: 1px 6px;
+  z-index: 999;
+  /* hints stay above all other elements */
+  position: absolute;
+  /* allows proper formatting if hint is two lines */
+  display: none;
 }
 .social {
   display: flex;
@@ -836,60 +970,31 @@ svg {
   }
 }
 .messengers__item {
-  position: relative;
-  padding-left: 27px;
-}
-.messengers__item::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
 }
 .messengers__item:not(:last-of-type) {
   margin-bottom: 20px;
 }
-.messengers__skype::before {
-  background-image: url(../img/icon-skype.svg);
-}
-.messengers__icq::before {
-  background-image: url(../img/icon-icq.svg);
-}
-.messengers__mail::before {
-  background-image: url(../img/icon-email.svg);
-}
-.messengers__phone::before {
-  background-image: url(../img/icon-phone.svg);
+.messengers__icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+  fill: #ffffff;
+  cursor: pointer;
 }
 .messengers__link {
-  display: block;
   color: #ffffff;
   font-size: inherit;
   line-height: inherit;
   transition: 0.2s;
 }
-.messengers__link:hover {
-  color: #b4b4b4;
+.messengers__item:hover > .messengers__icon {
+  fill: #b4b4b4;
 }
 .messengers__item:hover > .messengers__link {
   color: #b4b4b4;
-}
-.messengers__item:hover::before {
-  cursor: pointer;
-}
-.messengers__icq:hover::before {
-  background-image: url(../img/icon-icq-hover.svg);
-}
-.messengers__skype:hover::before {
-  background-image: url(../img/icon-skype-hover.svg);
-}
-.messengers__phone:hover::before {
-  background-image: url("../img/icon-phone copy.svg");
-}
-.messengers__mail:hover::before {
-  background-image: url("../img/icon-email copy.svg");
 }
 .footer {
   background-color: #f5f5f5;
