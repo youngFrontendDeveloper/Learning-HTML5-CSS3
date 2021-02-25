@@ -521,29 +521,29 @@ svg {
   height: 25px;
   background-image: url(../img/icon-plus.svg);
 }
-.scrinshots__wrapper {
+.screenshots__wrapper {
   padding: 25px 15px 0 15px;
 }
 @media (min-width: 768px) {
-  .scrinshots__wrapper {
+  .screenshots__wrapper {
     padding: 25px 20px 5px 20px;
   }
 }
 @media (min-width: 1170px) {
-  .scrinshots__wrapper {
+  .screenshots__wrapper {
     padding: 45px 50px 25px 50px;
   }
 }
-.scrinshots__title {
+.screenshots__title {
   margin-bottom: 15px;
 }
 @media (min-width: 768px) {
-  .scrinshots__title {
+  .screenshots__title {
     margin-bottom: 30px;
   }
 }
 @media (min-width: 1170px) {
-  .scrinshots__title {
+  .screenshots__title {
     margin-bottom: 45px;
   }
 }
