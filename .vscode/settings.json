@@ -1,0 +1,11 @@
+{
+  "liveServer.settings.port": 5501,
+  "workbench.colorTheme": "Monokai Dimmed",
+  "workbench.preferredDarkColorTheme": "Monokai Dimmed",
+  "workbench.preferredLightColorTheme": "Apple Pips (light)",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#143046",
+    "titleBar.activeBackground": "#1C4362",
+    "titleBar.activeForeground": "#FAFCFE"
+  }
+}
